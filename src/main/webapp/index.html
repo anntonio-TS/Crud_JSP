@@ -1,0 +1,63 @@
+<%@page import="modelo.Puesto" %>
+<%@page import="modelo.Empleado" %>
+<%@page import="java.util.HashMap" %>
+<%@page import="javax.swing.table.DefaultTableModel" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Empleados</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        
+    </head>
+    <body>
+        <h1>Formulario Empleados</h1>
+        <button type="button" name="btn_nuevo" id="btn_nuevo" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modal_empleado" onclick="limpiar()">Nuevo</button>
+        
+    <div class="container">
+         
+        <div class="modal fade" id="modal_empleado" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+             <form action="sr_estudiantes" method="post" class="form-group">
+               <label for="lbl_carne" ><b>Carne</b></label>
+                <input type="text" name="txt_carne" id="txt_carne" class="form-control" placeholder="Ejemplo: E001" pattern="[E]{1}[0-9]{3}" required> 
+                
+                <label for="lbl_nombre" ><b>Nombre</b></label>
+                <input type="text" name="txt_nombre" id="txt_nombre" class="form-control" placeholder="Ejemplo: Juanito" required>
+                
+                <label for="lbl_apellido" ><b>Apellido</b></label>
+                <input type="text" name="txt_apellido" id="txt_apellido" class="form-control" placeholder="Ejemplo: Perez" required>
+                
+                <label for="lbl_direccion" ><b>Direccion</b></label>
+                <input type="text" name="txt_direccion" id="txt_direccion" class="form-control" placeholder="Ejemplo: Antigua Guatemala" required>
+                
+                <label for="lbl_telefono" ><b>Telefono</b></label>
+                <input type="text"  name="txt_telefono" id="txt_telefono" class="form-control" placeholder="Ejemplo: 12345678" required>
+                
+                <label for="lbl_correo" ><b>Correo</b></label>
+                <input type="number" name="txt_correo" id="txt_correo" class="form-control" placeholder="Ejemplo: atojins@miumg.edu.gt" required>
+                
+                <label for="lbl_sangre" ><b>Sangre</b></label>
+                <input type="number" name="txt_sangre" id="txt_sangre" class="form-control" placeholder="Ejemplo: A+" required>
+                
+                <label for="lbl_fn" ><b>Fecha Nacimiento</b></label>
+                <input type="date"  name="txt_fn" id="txt_fn" class="form-control" required>
+                
+                
+                </select>
+                <br>
+                <button name="btn_agregar" id="btn_agregar"  value="agregar" class="btn btn-primary btn-lg">Agregar</button>
+                <button name="btn_modificar" id="btn_modificar"  value="modificar" class="btn btn-success btn-lg">Modificar</button>
+                <button name="btn_eliminar" id="btn_modificar"  value="eliminar" class="btn btn-danger btn-lg" onclick="javascript:if(!confirm('¿Desea Eliminar?'))return false" >Eliminar</button>
+                <button type="button" class="btn btn-warning btn-lg" data-dismiss="modal">Cerrar</button>
+            </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
